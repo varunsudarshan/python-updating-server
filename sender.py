@@ -1,7 +1,7 @@
 import time
 import random
 import socket
-host = socket.gethostname();
+host = "192.168.0.101" #server ip
 port = 5000
 sender_socket = socket.socket()
 while True:
