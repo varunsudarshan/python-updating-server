@@ -4,7 +4,14 @@ import socket
 host = socket.gethostname();
 port = 5000
 sender_socket = socket.socket()
-sender_socket.connect((host,port))
+while True:
+	try:
+		sender_socket.connect((host,port))
+	except socket.error,e:
+		print e
+		print "retrying"
+		continue
+	break
 while True:
 	a=random.randint(0,100)
 	print "sending "+str(a)
